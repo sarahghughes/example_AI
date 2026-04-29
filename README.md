@@ -12,7 +12,7 @@ with YWCA Central Maine (Nov 2025).
 
 The app runs in your browser — nothing to install.
 
-**[Click here to open the app](#)**
+**[Click here to open the app](https://exampleai-dwupyzeo8refn8k4g3sny8.streamlit.app/)**
 *(replace this link with your Streamlit Cloud URL after deploying)*
 
 ---
