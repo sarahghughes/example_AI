@@ -221,6 +221,16 @@ if st.session_state["data_loaded"] and not st.session_state["all_approved"]:
 
     st.progress(n_done / total, text=f"{n_done} of {total} charts approved")
 
+    if not all(s["approved"] for s in specs):
+        if st.button("✅ Approve all & download", type="primary"):
+            for s in specs:
+                render(s, st.session_state["df"], st.session_state["df_people"],
+                       st.session_state["people_conv"], st.session_state["pathway"],
+                       st.session_state["org_name"], preview=False)
+                s["approved"] = True
+            st.session_state["all_approved"] = True
+            st.rerun()
+
     nav_cols = st.columns(total)
     for i, s in enumerate(specs):
         if nav_cols[i].button("✅" if s["approved"] else str(i+1),
