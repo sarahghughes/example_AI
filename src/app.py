@@ -303,7 +303,7 @@ if st.session_state.get("all_approved"):
     df        = st.session_state["df"]
     exclude   = {"PersonKey","POC","LowIncome","IsYouth","Female","HighEng",
                "HouseIncomeRaw","HouseIncome","ProgramGroup","YouthAdult",
-               "ProgramCategory","Program"}
+               "ProgramCategory","Program", "Age"}
     data_level  = st.radio("Data level", ["Person-level","Enrollment-level"], horizontal=True)
     src         = df_people if data_level == "Person-level" else df
     col_options = [c for c in src.columns if c not in exclude]
